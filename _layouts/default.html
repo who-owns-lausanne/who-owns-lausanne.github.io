@@ -29,7 +29,7 @@
   </head>
   <body>
 
-    <header id="header">
+    <header class="question">
       <div class="background"></div>
 
       <div class="container">
@@ -41,6 +41,26 @@
         </p>
       </div>
     </header>
+
+    {% for question in site.questions %}
+      <header class="question">
+        <div
+          class="background"
+          style="background-image: url('{{ question.image_url | prepend: full_base_url }}')"
+        ></div>
+
+        <div class="container">
+          <h1>
+            {{ question.text }}
+          </h1>
+          {% unless question.content == blank %}
+            <p class="col-sm-6">
+              {{ question.content | strip_html }}
+            </p>
+          {% endunless %}
+        </div>
+      </header>
+    {% endfor %}
 
     <main class="container">
       <div class="row">

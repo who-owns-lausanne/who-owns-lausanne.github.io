@@ -26,6 +26,9 @@ github_username:  who-owns-lausanne
 # Build settings
 markdown: kramdown
 
+collections:
+  - questions
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

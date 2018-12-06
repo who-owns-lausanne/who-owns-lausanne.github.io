@@ -8,6 +8,14 @@ $font-family-headings: "Helvetica Neue", Arial, sans-serif;
 $font-weight-base: 300;
 $font-size-base:  1.25rem;
 
+$themecolors:(
+  darkblue: #0E285C,
+  intermedblue: #5B698C,
+  lightblue: #BDD8F2,
+  lightyellow: #EBFA7D,
+  brickred: #BD8273
+);
+
 $container-max-widths: (
   sm: 540px,
   md: 650px,
@@ -32,14 +40,24 @@ h1, h2, h3, h4, h5, h6 {
 
 // Components
 
-#header {
-  background-color: black;
+.question {
   color: white;
   position: relative;
   transition: background-color 0.35s;
 
-  &.active {
-    background-color: transparent;
+
+  // colors
+  @for $i from 1 through length($themecolors) {
+    $l: length($themecolors);
+
+    &:nth-child(#{$l}n + #{$i}) {
+      $color: nth(map-values($themecolors), $i);
+      background-color: $color;
+
+      &.active {
+        background-color: rgba($color, 0.4);
+      }
+    }
   }
 
   .background {
@@ -54,18 +72,33 @@ h1, h2, h3, h4, h5, h6 {
     background-position: center center;
   }
 
+  font-size: 0.75em;
+  &:first-child { font-size: 1em; }
+
   h1 {
-    font-size: 7em;
+    font-size: 3.5em;
+    @include media-breakpoint-up(sm) { font-size: 5em; }
+    @include media-breakpoint-up(md) { font-size: 6em; }
+    @include media-breakpoint-up(lg) { font-size: 6.5em; }
+    @include media-breakpoint-up(xl) { font-size: 8em; }
+
     line-height: 0.9;
     font-weight: bold;
-    padding: 1.3em 0;
+    padding-top: 1.5em;
+    padding-bottom: 0.75em;
   }
 
   p {
-    border-top: 1px solid white;
-    padding: 1em 0;
+    border-top: 5px solid white;
+    margin: 0;
+    padding: 1.5em 0;
+
     font-size: 1.2em;
     font-weight: normal;
     text-shadow: 0 0 4px black;
   }
+}
+
+main {
+  padding-top: 1em;
 }
