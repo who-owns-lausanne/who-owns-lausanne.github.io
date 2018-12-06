@@ -20,7 +20,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   who owns these expensive properties? Follow us on our journey to discover
   to real estate situation in different parts of Lausanne.
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://who-owns-lausanne.github.io"
+url: "https://who-owns-lausanne.github.io/"
 github_username:  who-owns-lausanne
 
 # Build settings
