@@ -1,6 +1,6 @@
 
 $(() => {
 
-  setTimeout(() => $("#header").addClass("active"), 1000)
+  setTimeout(() => $("#header").addClass("active"), 2000)
 
 })

@@ -1,10 +1,36 @@
 ---
 ---
 
-$font-family-base: "Helvetica Neue", Arial, sans-serif;
+// Variables
+
+$font-family-base: "supria-sans", Arial, sans-serif;
+$font-family-headings: "Helvetica Neue", Arial, sans-serif;
+$font-weight-base: 300;
 $font-size-base:  1.25rem;
 
+$container-max-widths: (
+  sm: 540px,
+  md: 650px,
+  lg: 700px,
+  xl: 850px
+);
+
 @import "bootstrap";
+
+// General styles
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-headings;
+}
+
+@include media-breakpoint-down(xs) {
+  .container {
+    padding-left: $grid-gutter-width;
+    padding-right: $grid-gutter-width;
+  }
+}
+
+// Components
 
 #header {
   background-color: black;
