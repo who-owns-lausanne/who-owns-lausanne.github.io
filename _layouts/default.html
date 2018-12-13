@@ -23,44 +23,13 @@
     <link rel="canonical" href="
       {{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}
     ">
-
-
-
   </head>
   <body>
 
-    <header class="question">
-      <div class="background"></div>
-
-      <div class="container">
-        <h1>
-          {{ site.title }}
-        </h1>
-        <p class="col-sm-6">
-          {{ site.description }}
-        </p>
-      </div>
-    </header>
-
-    {% for question in site.questions %}
-      <header class="question">
-        <div
-          class="background"
-          style="background-image: url('{{ question.image_url | prepend: full_base_url }}')"
-        ></div>
-
-        <div class="container">
-          <h1>
-            {{ question.text }}
-          </h1>
-          {% unless question.content == blank %}
-            <p class="col-sm-6">
-              {{ question.content | strip_html }}
-            </p>
-          {% endunless %}
-        </div>
-      </header>
-    {% endfor %}
+    {% include question.html
+      text=site.title
+      content="Have you tried to find affordable accommodation in Lausanne recently? We have. Follow us along."
+    %}
 
     <main class="container">
       <div class="row">

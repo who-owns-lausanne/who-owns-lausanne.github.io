@@ -16,6 +16,8 @@ $themecolors:(
   brickred: #BD8273
 );
 
+$primary: map-get($themecolors, brickred);
+
 $container-max-widths: (
   sm: 540px,
   md: 650px,
@@ -25,10 +27,17 @@ $container-max-widths: (
 
 @import "bootstrap";
 
+
+
 // General styles
 
 h1, h2, h3, h4, h5, h6 {
+  margin-top: 0.5em;
   font-family: $font-family-headings;
+}
+
+p + p {
+  text-indent: 2em;
 }
 
 @include media-breakpoint-down(xs) {
@@ -38,11 +47,23 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+
+
 // Components
 
 .question {
-  color: white;
   position: relative;
+  width: 100vw;
+  margin-left: -50vw;
+  left: 50%;
+
+  overflow: hidden;
+
+  $margin-around-images: 2em;
+  margin-bottom: $margin-around-images;
+  &.in-text { margin-top: $margin-around-images; }
+
+  color: white;
   transition: background-color 0.35s;
 
 
@@ -75,6 +96,8 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.75em;
   &:first-child { font-size: 1em; }
 
+  .container { padding-bottom: 3em; }
+
   h1 {
     font-size: 3.5em;
     @include media-breakpoint-up(sm) { font-size: 5em; }
@@ -87,18 +110,16 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 1.5em;
     padding-bottom: 0.75em;
   }
+  &:first-child h1 { padding-top: 1em; }
 
   p {
     border-top: 5px solid white;
     margin: 0;
-    padding: 1.5em 0;
+    padding: 0;
+    padding-top: 1em;
 
     font-size: 1.2em;
     font-weight: normal;
     text-shadow: 0 0 4px black;
   }
-}
-
-main {
-  padding-top: 1em;
 }
