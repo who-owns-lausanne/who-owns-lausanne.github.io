@@ -32,7 +32,7 @@ $container-max-widths: (
 // General styles
 
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0.5em;
+  padding-top: 0.5em;
   font-family: $font-family-headings;
 }
 
@@ -59,7 +59,7 @@ p + p {
 
   overflow: hidden;
 
-  $margin-around-images: 2em;
+  $margin-around-images: 3em;
   margin-bottom: $margin-around-images;
   &.in-text { margin-top: $margin-around-images; }
 
@@ -93,7 +93,7 @@ p + p {
     background-position: center center;
   }
 
-  font-size: 0.75em;
+  font-size: 0.6em;
   &:first-child { font-size: 1em; }
 
   .container { padding-bottom: 3em; }
@@ -107,10 +107,10 @@ p + p {
 
     line-height: 0.9;
     font-weight: bold;
-    padding-top: 1.5em;
+    padding-top: 2em;
     padding-bottom: 0.75em;
   }
-  &:first-child h1 { padding-top: 1em; }
+  &:first-child h1 { padding-top: 1.5em; }
 
   p {
     border-top: 5px solid white;
@@ -121,5 +121,14 @@ p + p {
     font-size: 1.2em;
     font-weight: normal;
     text-shadow: 0 0 4px black;
+  }
+}
+
+main {
+  img {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    border: 1px solid rgba(0,0,0,0.1);
   }
 }
