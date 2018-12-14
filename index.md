@@ -155,7 +155,7 @@ price. This allowed us to get a smooth heat-map of rents in Lausanne.
 
 {% include question.html in_text=true
  text="What makes rents in Lausanne expensive?"
- image_url="assets/img/Lausanne_by_Night.jpg"
+ image_url="assets/img/belair.jpg"
 %}
 
 #### Ownership influence

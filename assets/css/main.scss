@@ -133,4 +133,23 @@ main {
     display: block;
     border: 1px solid rgba(0,0,0,0.1);
   }
+
+  .footnotes {
+    margin-top: 4em;
+    padding-top: 1em;
+    border-top: 5px solid $gray-600;
+    color: $gray-600;
+  }
+}
+
+footer {
+  margin-top: 2em;
+  padding: 5em 0;
+  background-color: map-get($themecolors, darkblue);
+  color: $gray-600;
+
+  img {
+    width: 20px;
+    vertical-align: middle;
+  }
 }
