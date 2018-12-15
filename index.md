@@ -175,7 +175,7 @@ map. Clearly, the parts near the lake are more red. Our next linear regression
 therefore analyses the dependence of the price on the distance to the port of
 Lausanne, [_Ouchy_]. As you can observe in the plot to the left, there is a
 visible correlation. Our model can confirm with a high significance that the
-more you go toward the country-side, the cheaper flats get.
+more you go towards the country-side, the cheaper flats get.
 
 There is also a second factor that influences rent prices per square meter. This
 factor is less obvious: the surface of the flat inversely correlates with the
