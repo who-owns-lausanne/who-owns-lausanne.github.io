@@ -84,7 +84,7 @@ cultural heritage._
  - PPE: _the single flats in a building are owned by different people – in french
 _   proriété par étage.
 
- - individual privates: _The whole building is owned by a private citizen._
+ - individual privates: _the whole building is owned by a private citizen._
 
 
 If we look at the data as a map a very noisy mosaic shows up.
