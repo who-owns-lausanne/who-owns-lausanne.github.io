@@ -82,7 +82,7 @@ a small amount of parcels we will group them into 7 types:
 cultural heritage._
 
  - PPE: _the single flats in a building are owned by different people – in french
-   proriété par étage_.
+_   proriété par étage.
 
  - individual privates: _The whole building is owned by a private citizen._
 
