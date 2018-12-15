@@ -36,7 +36,7 @@ divide the city into its neighbourhoods – in french
 - There is no direct relation between owner type and prices. The market seems to
   adjust prices uniformly over the ownership types.
 
-- The price per square meter of rent is strongly influenced by the distance to the
+- The price per square meter of a flat is strongly influenced by the distance to the
   _lac Léman_ and by the surface of the flat. Smaller flats cost more
   per square meter than large flats.
 
