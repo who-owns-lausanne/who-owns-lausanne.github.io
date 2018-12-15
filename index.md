@@ -93,7 +93,7 @@ a small amount of parcels we will group them into 7 types:
 
 If we look at the data as a map a very noisy mosaic shows up.
 
-##### => noisy ownership type by parcel map
+<iframe src="assets/export/by_owners_category.html"></iframe>
 
 #### Denoising
 
@@ -104,9 +104,7 @@ neighbouring parcels and looked at their ownership type. The cell was then
 reassigned to the type which covered the most of the circle's surface. This can
 be seen as a weighted [k-nearest-neighbours] algorithm with variable _k_.
 
-
 ##### => denoised ownership type by parcel map
-
 
 With this cleaner picture, we looked at the majority owner for each quartier.
 
@@ -114,12 +112,12 @@ With this cleaner picture, we looked at the majority owner for each quartier.
 
 #### Diversity
 
-The fact that the two maps are different shows that there is a lot of
-diversity in some _quartiers_' ownership patterns. In order to see which
-_quartiers_ are the most diversely owned, we computed another map that measures
-the diversity based on the entropy.
+The fact that the two maps are different shows that there is a lot of diversity
+in some _quartiers_' ownership patterns. In order to see which _quartiers_ are
+the most diversely owned, we computed another map that measures the diversity
+with the [Shannon entropy] of the owners in a circle around each parcel.
 
-##### => exact measure and map
+##### => entropy map
 
 
 {% include question.html in_text=true
@@ -149,7 +147,7 @@ perfect match for the problem. (And not _only_ because of its name.) By looking
 at the (in our case 13) nearest neighbours of a parcel it predicts the rent
 price. This allowed us to get a smooth heat-map of rents in Lausanne.
 
-##### => 3-layer heatmap (points, per quartier, continuous)
+<iframe src="assets/export/parcelles_prices.html"></iframe>
 
 ##### => interpret the pictures?
 
@@ -182,13 +180,13 @@ Lausanne, [_Ouchy_]. As you can observe in the plot to the left, there is a
 visible correlation. Our model can confirm with a high significance that the
 more you go up hill the cheaper flats get.
 
+![Linear regression on the rent prices](assets/export/distance.svg)
+
 There is also a second factor that influences rent prices per square meter. This
 factor is less obvious: the surface of the flat inversely correlates with the
 price per square meter. From the plot one can see that especially small flats
 have a very high price per square meter.
 
-
-##### => linear regression 2 plots
 
 {% include question.html in_text=true
  text="What have we learned from it?"
@@ -237,6 +235,7 @@ _Thanks for reading._ [^2]
 
 [_Ouchy_]: https://map.geo.admin.ch/?lang=en&topic=ech&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.zeitreihen,ch.bfs.gebaeude_wohnungs_register,ch.bav.haltestellen-oev,ch.swisstopo.swisstlm3d-wanderwege&layers_visibility=false,false,false,false&layers_timestamp=18641231,,,&E=2537733&N=1150883&zoom=7.498594761554026&crosshair=marker
 
+[Shannon entropy]: https://en.wikipedia.org/wiki/Entropy_(information_theory)
 [linear regression]: https://en.wikipedia.org/wiki/Linear_regression
 [k-nearest-neighbours]: https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm
 [asit]: https://www.asitvd.ch/chercher/catalogue.html?view=sheet&guid=486&catalog=main&type=complete&preview=search_list

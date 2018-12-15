@@ -12,8 +12,11 @@ $themecolors:(
   darkblue: #0E285C,
   intermedblue: #5B698C,
   lightblue: #BDD8F2,
+  green: #84CFAC,
   lightyellow: #EBFA7D,
-  brickred: #BD8273
+  salmon: #F2DCB3,
+  brickred: #BD8273,
+  purple: #B2A7DB
 );
 
 $primary: map-get($themecolors, brickred);
@@ -49,15 +52,18 @@ p + p {
   }
 }
 
+@mixin stretch-to-vw() {
+  position: relative;
+  width: 100vw;
+  margin-left: -50vw;
+  left: 50%;
+}
 
 
 // Components
 
 .question {
-  position: relative;
-  width: 100vw;
-  margin-left: -50vw;
-  left: 50%;
+  @include stretch-to-vw;
 
   overflow: hidden;
 
@@ -132,6 +138,13 @@ main {
     margin: 0 auto;
     display: block;
     border: 1px solid rgba(0,0,0,0.1);
+  }
+
+  iframe {
+    width: 100%;
+    min-height: 500px;
+    height: 70vh;
+    border: none;
   }
 
   .footnotes {
