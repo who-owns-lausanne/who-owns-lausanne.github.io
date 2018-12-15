@@ -8,40 +8,36 @@ Finding an apartment in Lausanne with a rent that fits a student budget is a
 time-consuming and tedious task. If you have just arrived in Lausanne, you don't
 know where to look. Is it cheaper on the hill or near the university? You don't
 know all the parameters that come into play and while running from one flat
-viewing to another you start to wonder, who owns all this real estate you would
+viewing to another you start to wonder: who owns all this real estate you would
 like to live in?
 
 #### Goal
 
 We want to bring some light into the opaque world of real estate. By leveraging
 openly accessible data our goal is to understand **how rent prices are
-influenced by the type of the owner, the geographical situation or other
+influenced by the type of the owner, the geographical situation, or other
 factors**. This article should serve as a head start for people searching
 affordable rents in Lausanne.
 
 #### Key insights
 
-In particular you will get enlightened about the real estate insights listed
-below and you will understand how those were obtained. Even if Lausanne is not
+In particular you will be enlightened by the following real estate insights
+and you will understand how these were obtained. Even if Lausanne is not
 New York we needed to think of it in smaller units. Therefore, our results
 divide the city into its neighbourhoods – in french
 [_quartiers_][quartiers_lausanne].
 
-- We evaluated the mean rents per _quartier_  and can therefore say that the
-  _quartiers_  _Montriond_ and _Ouchy_  are clearly more expensive
+- the _quartiers_  _Montriond_ and _Ouchy_  are clearly more expensive
   than the rest.
 
-- For each _quartier_, we analysed its ownership pattern. This means we know
-  what type of owner possesses the most properties and also how diverse the
-  owners of _quartier_ are. For example the centre is mainly owned by
-  corporations.
+- The city center is mostly owned by corporations,
+  _Chailly_ is mostly owned by privates.
 
-- Even if some parts of the city are owned by different types of owners, there
-  is no direct relation between owner type and prices. The market seems to
+- There is no direct relation between owner type and prices. The market seems to
   adjust prices uniformly over the ownership types.
 
-- However, the height of a rent is strongly influenced by the distance to the
-  lake Geneva and by the inverse surface of the flat. Smaller flats cost more
+- The price per square meter of rent is strongly influenced by the distance to the
+  _lac Léman_ and by the surface of the flat. Smaller flats cost more
   per square meter than large flats.
 
 
@@ -83,12 +79,12 @@ a small amount of parcels we will group them into 7 types:
  - cooperatives: _registered cooperative companies like Migros, la Mobilière etc._
 
  - foundations and associations: _for example the olympic foundation for
-    cultural heritage._
+cultural heritage._
 
- - PPE: _a swiss thing: single flats owned by private people – in french_
-   proriété par étage.
+ - PPE: _the single flats in a building are owned by different people – in french
+   proriété par étage_.
 
- - individual privates: _just normal people like you and me._
+ - individual privates: _The whole building is owned by a private citizen._
 
 
 If we look at the data as a map a very noisy mosaic shows up.
@@ -97,7 +93,7 @@ If we look at the data as a map a very noisy mosaic shows up.
 
 #### Denoising
 
-If you just squinted while looking at the map we have the same intuition. The
+If you just squinted while looking at the map, we have the same intuition. The
 mosaic is too chaotic to say anything. Therefore, we try to smoothen the picture
 –  digitally. For each parcel we drew an imaginary circle through its
 neighbouring parcels and looked at their ownership type. The cell was then
@@ -139,15 +135,15 @@ can present them in the map below.
 
 #### Extrapolation
 
-However, these points don't really help if one needs information for a property
+These points don't really help if one needs information for a property
 between two points. Therefore, you find the second map that features the mean
 rent price for each _quartier_.
 
 We were still not satisfied by this second map, because it averages out all
 fine-grained information. The  [k-nearest-neighbours] algorithm seemed like the
 perfect match for the problem. (And not _only_ because of its name.) By looking
-at the (in our case 13) nearest neighbours of a parcel it predicts the rent
-price. This allowed us to get a smooth heat-map of rents in Lausanne.
+at the nearest neighbours of a parcel we predict its rent
+price. This allows us to get a smooth heat-map of rents in Lausanne.
 
 ##### => 3-layer heatmap (points, per quartier, continuous)
 
@@ -165,26 +161,25 @@ whether the ownership type also influences the price of accommodation. To give a
 statistically correct answer, we evaluated a simple linear model with
 [linear regression]. The model tries to find significantly different mean rent
 prices depending on the ownership type of a parcel.
-
-However, this model did not give a meaningful result. It seems like our
+This model howver does not give a meaningful result. It seems like our
 hypothesis that rents are different if the property is for example owned by a
-corporation has no factual basis. Even if there are differences in the mean
-rents of each ownership type they might just arise from random noise. After all,
+corporation has no factual basis, and that the small differences in the mean
+rents of each ownership type just arise from random noise. After all,
 we only have a small number of offers compared to the number of parcels.
 
 #### Geographical factors
 
 But if the owner doesn't influence the price what does? Why are prices
-different. You can get an intuition for this by looking at the smoothed rent
+different? You can get an intuition for this by looking at the smoothed rent
 map. Clearly, the parts near the lake are more red. Our next linear regression
 therefore analyses the dependence of the price on the distance to the port of
 Lausanne, [_Ouchy_]. As you can observe in the plot to the left, there is a
 visible correlation. Our model can confirm with a high significance that the
-more you go up hill the cheaper flats get.
+more you go toward the country-side, the cheaper flats get.
 
 There is also a second factor that influences rent prices per square meter. This
 factor is less obvious: the surface of the flat inversely correlates with the
-price per square meter. From the plot one can see that especially small flats
+price per square meter. From the plot one can see that small flats
 have a very high price per square meter.
 
 
