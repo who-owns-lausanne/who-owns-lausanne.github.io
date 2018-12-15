@@ -27,7 +27,7 @@ New York we needed to think of it in smaller units. Therefore, our results
 divide the city into its neighbourhoods – in french
 [_quartiers_][quartiers_lausanne].
 
-- the _quartiers_  _Montriond_ and _Ouchy_  are clearly more expensive
+- The _quartiers_  _Montriond_ and _Ouchy_  are clearly more expensive
   than the rest.
 
 - The city center is mostly owned by corporations,
