@@ -27,6 +27,8 @@ New York we needed to think of it in smaller units. Therefore, our results
 divide the city into its neighbourhoods – in french
 [_quartiers_][quartiers_lausanne].
 
+- The owner with the most parcels in Lausanne is the city council.
+
 - The _quartiers_  _Montriond_ and _Ouchy_  are clearly more expensive
   than the rest.
 
