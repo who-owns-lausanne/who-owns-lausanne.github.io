@@ -19,6 +19,16 @@ $themecolors:(
   purple: #B2A7DB
 );
 
+$ownercolors: (
+  coop: #ffffb3,
+  corp: #fb8072,
+  public: #b3de69,
+  private: #8dd3c7,
+  ppe: #fdb462,
+  pension: #bebada,
+  foundation: #80b1d3,
+);
+
 $primary: map-get($themecolors, brickred);
 
 $container-max-widths: (
@@ -142,9 +152,31 @@ main {
 
   iframe {
     width: 100%;
-    min-height: 500px;
-    height: 70vh;
+    height: 500px;
     border: none;
+  }
+
+  .owner-legend {
+    position: relative;
+    list-style: none;
+
+    li:before {
+      content: " ";
+      display: block;
+      position: absolute;
+      width: 1em;
+      height: 1em;
+      left: 0;
+      margin-top: 6px;
+    }
+
+    @each $classname, $color in $ownercolors {
+      .#{$classname} {
+        &::before {
+          background-color: $color;
+        }
+      }
+    }
   }
 
   .footnotes {
