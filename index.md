@@ -32,7 +32,7 @@ divide the city into its neighbourhoods – in french
 - The _quartiers_  _Montriond_ and _Ouchy_  are clearly more expensive
   than the rest.
 
-- The city center is mostly owned by corporations,
+- The city centre is mostly owned by corporations,
   _Chailly_ is mostly owned by privates.
 
 - There is no direct relation between owner type and prices. The market seems to
@@ -51,11 +51,11 @@ divide the city into its neighbourhoods – in french
 
 Our first [dataset][asit] consists of the geographical, [cadastral] and address
 data behind [map.lausanne.ch](https://map.lausanne.ch). It features the owner of
-each of the almost 8000 plots or parcels (of land) of the city (unless the
-parcel represents a road or a bridge). There are about 4000 entities possessing
-real estate and they as diverse as you would imagine them ranging from the city
-council, to private people and even multinational companies like Crédit Suisse,
-Phillip Morris International or the pension fund of Swatch.[^1]
+each of the almost 8000 plots or parcels (of land) in Lausanne. Unless the
+parcel represents a road or a bridge. There are about 4000 entities possessing
+real estate and they are as diverse as you would imagine them ranging from the
+city council, to private people and even multinational companies like Crédit
+Suisse, Phillip Morris International or the pension fund of Swatch.[^1]
 
 [^1]:  
     This number does not account for PPE (_prorpiété par étage_). If a house's
@@ -66,14 +66,15 @@ Phillip Morris International or the pension fund of Swatch.[^1]
 #### Ownership types
 
 The owner with the most parcels is unsurprisingly the **city of Lausanne**. With
-1265 parcels it owns ten times more than the next two owners which are both
-pension funds; of the city and of the canton Vaud. Because most owners only have
-a small amount of parcels we will group them into 7 types:
+1265 parcels it owns 12% of all parcels. This is ten times more than the next
+two owners which are both pension funds; of the city and of the canton Vaud.
+Because most owners only have a small amount of parcels we will group them into
+7 types:
 
 {: .owner-legend }
  - {: .public } public institutions: _the city, the swiss railways etc._
 
-- {: .pension } pension or similar funds: _investment foundations,the city's
+- {: .pension } pension or similar funds: _investment foundations, the city's
   pension fund, etc._
 
  - {: .corp } corporations: _listed public companies like Swiss Life S.A., Régie
@@ -85,11 +86,10 @@ a small amount of parcels we will group them into 7 types:
  - {: .foundation } foundations and associations: _for example the olympic foundation for
     cultural heritage._
 
- - {: .ppe } PPE: _the single flats in a building are owned by different people
- – in french_ proriété par étage.
+ - {: .ppe } PPE: _single flats in a building owned by different private people
+ -- in french_ proriété par étage.
 
- - {: .private } individual privates: _the whole building is owned by a private
-    citizen._
+ - {: .private } individual privates: _private citizens owning an entire building._
 
 
 If we look at the data as a map a very noisy mosaic shows up.
@@ -103,13 +103,14 @@ mosaic is too chaotic to say anything. Therefore, we try to smoothen the picture
 –  digitally. For each parcel we drew an imaginary circle through its
 neighbouring parcels and looked at their ownership type. The cell was then
 reassigned to the type which covered the most of the circle's surface. This can
-be seen as a weighted [k-nearest-neighbours] algorithm with variable _k_.
+be seen as a weighted [k-nearest-neighbours] algorithm with variable _k_. (Click
+on the legend of the above map to see the second layer.)
 
-##### => denoised ownership type by parcel map
+With this cleaner picture, some patterns emerge. The eastern _quartier_
+_Chailly_ is dominantly owned by privates. Big parks, the lakeside and the rail
+lines are of course possessed by public institutions and the centre of the city
+has the highest density of corporations.
 
-With this cleaner picture, we looked at the majority owner for each quartier.
-
-##### => Count biggest owner types per quartier
 
 #### Diversity
 
@@ -118,8 +119,14 @@ in some _quartiers_' ownership patterns. In order to see which _quartiers_ are
 the most diversely owned, we computed another map that measures the diversity
 with the [Shannon entropy] of the owners in a circle around each parcel.
 
-##### => entropy map
+<iframe src="assets/export/entropy_owners.html"></iframe>
 
+Unsurprisingly, the large parks, the airport and the lakeside which all belong
+to the city have low  entropy in their ownership patterns. That means there is a
+local monopoly of owners. While this was expected for the city's properties it
+is rather a discovery for the [_Flon_] in the centre of the city. This area is
+red as well because a single corporation (_LO Immeubles S.A._) owns all of the
+properties in the _Flon_!
 
 {% include question.html in_text=true
   text="How expensive are rents in Lausanne?"
@@ -139,18 +146,22 @@ can present them in the map below.
 #### Extrapolation
 
 These points don't really help if one needs information for a property
-between two points. Therefore, you find the second map that features the mean
-rent price for each _quartier_.
+between two points. Therefore, you find the second map that features the median
+rent price for each _quartier_. (Click on the second layer of the map.)
 
 We were still not satisfied by this second map, because it averages out all
 fine-grained information. The  [k-nearest-neighbours] algorithm seemed like the
 perfect match for the problem. (And not _only_ because of its name.) By looking
-at the nearest neighbours of a parcel we predict its rent
-price. This allows us to get a smooth heat-map of rents in Lausanne.
+at the nearest neighbours of a parcel we predict its rent price. This allows us
+to get a smooth heat-map of rents in Lausanne which is displayed as the third
+layer below:
 
 <iframe src="assets/export/by_rents_all_in_one.html"></iframe>
 
-##### => interpret the pictures?
+There seem to be two hot spots for high rents: the city centre and even more
+significantly the two _quartiers_ near the lake and the port _Montriond_ and
+_Ouchy_. For our student readers, the affordable rents are more on the hill, for
+example near the airport.
 
 {% include question.html in_text=true
  text="What makes rents in Lausanne expensive?"
@@ -159,7 +170,7 @@ price. This allows us to get a smooth heat-map of rents in Lausanne.
 
 #### Ownership influence
 
-Having seen the differences in ownership across the city we ask ourselves
+Having seen the differences in ownership across the city, we ask ourselves
 whether the ownership type also influences the price of accommodation. To give a
 statistically correct answer, we evaluated a simple linear model with
 [linear regression]. The model tries to find significantly different mean rent
@@ -172,7 +183,7 @@ we only have a small number of offers compared to the number of parcels.
 
 #### Geographical factors
 
-But if the owner doesn't influence the price what does? Why are prices
+But if the owner doesn't influence the price, what does? Why are prices
 different? You can get an intuition for this by looking at the smoothed rent
 map. Clearly, the parts near the lake are more red. Our next linear regression
 therefore analyses the dependence of the price on the distance to the port of
@@ -211,13 +222,15 @@ As students at [EPFL](https://www.epfl.ch/) we know how hard it is to find
 accommodation in Lausanne. We hope that this analysis helped you understand
 where to look for a flat and what parameters determine the prices across the
 city. This projects also shows the potential of open data for providing
-transparency and insight into otherwise opaque systems. We can only to do the
-same for other  things that interest you![^2]
+transparency and insight into otherwise opaque systems. We can only encourage to
+do the same for other  things that interest you![^2]
 
 
 [^2]: All images are from [wikimedia commons](https://commons.wikimedia.org/wiki/Category:Lausanne).
 
 [_Ouchy_]: https://map.geo.admin.ch/?lang=en&topic=ech&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.zeitreihen,ch.bfs.gebaeude_wohnungs_register,ch.bav.haltestellen-oev,ch.swisstopo.swisstlm3d-wanderwege&layers_visibility=false,false,false,false&layers_timestamp=18641231,,,&E=2537733&N=1150883&zoom=7.498594761554026&crosshair=marker
+
+[_Flon_]: https://map.geo.admin.ch/?lang=en&topic=ech&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.zeitreihen,ch.bfs.gebaeude_wohnungs_register,ch.bav.haltestellen-oev,ch.swisstopo.swisstlm3d-wanderwege&layers_visibility=false,false,false,false&layers_timestamp=18641231,,,&E=2537831&N=1152550&zoom=7.896666666666668&crosshair=marker
 
 [Shannon entropy]: https://en.wikipedia.org/wiki/Entropy_(information_theory)
 [linear regression]: https://en.wikipedia.org/wiki/Linear_regression
