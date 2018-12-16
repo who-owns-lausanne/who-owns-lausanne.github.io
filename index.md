@@ -50,7 +50,7 @@ divide the city into its neighbourhoods – in french
 
 
 Our first [dataset][asit] consists of the geographical, [cadastral] and address
-data behind [map.lausanne.ch](https://map.lausanne.ch) It features the owner of
+data behind [map.lausanne.ch](https://map.lausanne.ch). It features the owner of
 each of the almost 8000 plots or parcels (of land) of the city (unless the
 parcel represents a road or a bridge). There are about 4000 entities possessing
 real estate and they as diverse as you would imagine them ranging from the city
@@ -132,7 +132,7 @@ If you visit a real estate portal you see something like
 prices. To overcome this, we collected the listings from the three most
 important swiss platforms ([Anibis](https://www.anibis.ch/),
 [Homegate](https://www.homegate.ch/) and [Tutti](https://www.tutti.ch/)). After
-removing duplicates and fake offers this gave us 496 offers with prices in
+removing duplicates and fake offers this gave us 469 offers with prices in
 CHF/m<sup>2</sup>. By combining them with our geographical data from before, we
 can present them in the map below.
 
@@ -164,7 +164,7 @@ whether the ownership type also influences the price of accommodation. To give a
 statistically correct answer, we evaluated a simple linear model with
 [linear regression]. The model tries to find significantly different mean rent
 prices depending on the ownership type of a parcel.
-This model howver does not give a meaningful result. It seems like our
+This model however does not give a meaningful result. It seems like our
 hypothesis that rents are different if the property is for example owned by a
 corporation has no factual basis, and that the small differences in the mean
 rents of each ownership type just arise from random noise. After all,
@@ -183,7 +183,7 @@ more you go towards the country-side, the cheaper flats get.
 ![Linear regression on the rent prices](assets/export/distance.svg)
 
 There is also a second factor that influences rent prices per square meter. This
-factor is less obvious: the surface of the flat inversely correlates with the
+aspect is less obvious: the surface of the flat inversely correlates with the
 price per square meter. From the plot one can see that small flats
 have a very high price per square meter.
 
