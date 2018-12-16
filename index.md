@@ -212,21 +212,12 @@ accommodation in Lausanne. We hope that this analysis helped you understand
 where to look for a flat and what parameters determine the prices across the
 city.
 
-
-#### Open data
-
-Let us finish with a thought on open data. All underlying data of this project
-is publicly available. The cadastral data represents the more common case where
-statistical offices of a governmental body make datasets available. But also the
-rent price data is public since you clicked on the the links of the real estate
-portals and saw all their listings and prices.
-
-This projects shows the potential of open data for providing transparency and
-insight into otherwise opaque systems. Websites like
-[opendata.swiss](https://opendata.swiss) offer  a wide range of datasets and we
-can only encourage you to visit them and get insights on other things that
-interest you!
-
+Lastly we would like to draw your attention to the fact that all underlying data
+of this project is publicly available. This projects shows the potential of open
+data for providing transparency and insight into otherwise opaque systems.
+Websites like [opendata.swiss](https://opendata.swiss) offer  a wide range of
+datasets and we can only encourage you to visit them and get insights on other
+things that interest you!
 
 _Thanks for reading._ [^2]
 
