@@ -94,7 +94,7 @@ a small amount of parcels we will group them into 7 types:
 
 If we look at the data as a map a very noisy mosaic shows up.
 
-<iframe src="assets/export/by_owners_category.html"></iframe>
+<iframe src="assets/export/by_owners_all_in_one.html"></iframe>
 
 #### Denoising
 
@@ -148,7 +148,7 @@ perfect match for the problem. (And not _only_ because of its name.) By looking
 at the nearest neighbours of a parcel we predict its rent
 price. This allows us to get a smooth heat-map of rents in Lausanne.
 
-<iframe src="assets/export/parcelles_prices.html"></iframe>
+<iframe src="assets/export/by_rents_all_in_one.html"></iframe>
 
 ##### => interpret the pictures?
 
@@ -210,16 +210,9 @@ significant factor for the price.
 As students at [EPFL](https://www.epfl.ch/) we know how hard it is to find
 accommodation in Lausanne. We hope that this analysis helped you understand
 where to look for a flat and what parameters determine the prices across the
-city.
-
-Lastly we would like to draw your attention to the fact that all underlying data
-of this project is publicly available. This projects shows the potential of open
-data for providing transparency and insight into otherwise opaque systems.
-Websites like [opendata.swiss](https://opendata.swiss) offer  a wide range of
-datasets and we can only encourage you to visit them and get insights on other
-things that interest you!
-
-_Thanks for reading._ [^2]
+city. This projects also shows the potential of open data for providing
+transparency and insight into otherwise opaque systems. We can only to do the
+same for other  things that interest you![^2]
 
 
 [^2]: All images are from [wikimedia commons](https://commons.wikimedia.org/wiki/Category:Lausanne).
