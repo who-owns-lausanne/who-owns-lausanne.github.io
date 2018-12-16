@@ -68,23 +68,26 @@ The owner with the most parcels is unsurprisingly the **city of Lausanne**. With
 pension funds; of the city and of the canton Vaud. Because most owners only have
 a small amount of parcels we will group them into 7 types:
 
- - public institutions: _the city, the swiss railways etc._
+{: .owner-legend }
+ - {: .public } public institutions: _the city, the swiss railways etc._
 
-- pension or similar funds: _investment foundations,the city's pension fund,
-  etc._
+- {: .pension } pension or similar funds: _investment foundations,the city's
+  pension fund, etc._
 
- - corporations: _listed public companies like Swiss Life S.A., Régie Chamot &
-   Cie S.A. etc._
+ - {: .corp } corporations: _listed public companies like Swiss Life S.A., Régie
+  Chamot & Cie S.A. etc._
 
- - cooperatives: _registered cooperative companies like Migros, la Mobilière etc._
+ - {: .coop } cooperatives: _registered cooperative companies like Migros, la
+  Mobilière etc._
 
- - foundations and associations: _for example the olympic foundation for
-cultural heritage._
+ - {: .foundation } foundations and associations: _for example the olympic foundation for
+    cultural heritage._
 
- - PPE: _the single flats in a building are owned by different people – in french
-_   proriété par étage.
+ - {: .ppe } PPE: _the single flats in a building are owned by different people
+ – in french_ proriété par étage.
 
- - individual privates: _the whole building is owned by a private citizen._
+ - {: .private } individual privates: _the whole building is owned by a private
+    citizen._
 
 
 If we look at the data as a map a very noisy mosaic shows up.
