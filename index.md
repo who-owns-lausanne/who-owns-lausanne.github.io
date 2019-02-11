@@ -27,7 +27,7 @@ New York we needed to think of it in smaller units. Therefore, our results
 divide the city into its neighbourhoods – in french
 [_quartiers_][quartiers_lausanne].
 
-- The owner with the most parcels in Lausanne is the city council.
+- The owner with the most parcels in Lausanne is the municipality.
 
 - The _quartiers_  _Montriond_ and _Ouchy_  are clearly more expensive
   than the rest.
@@ -51,11 +51,11 @@ divide the city into its neighbourhoods – in french
 
 Our first [dataset][asit] consists of the geographical, [cadastral] and address
 data behind [map.lausanne.ch](https://map.lausanne.ch). It features the owner of
-each of the almost 8000 plots or parcels (of land) in Lausanne. Unless the
-parcel represents a road or a bridge. There are about 4000 entities possessing
-real estate and they are as diverse as you would imagine them ranging from the
-city council, to private people and even multinational companies like Crédit
-Suisse, Phillip Morris International or the pension fund of Swatch.[^1]
+each of the almost 8000 plots or parcels (of land) in Lausanne.
+There are about 4000[^1] entities possessing
+real estate and they are as diverse as you would imagine them, ranging from the
+municipality, to private people, to even multinational companies like Crédit
+Suisse, Phillip Morris International or the pension fund of Swatch.
 
 [^1]:  
     This number does not account for PPE (_prorpiété par étage_). If a house's
@@ -67,7 +67,7 @@ Suisse, Phillip Morris International or the pension fund of Swatch.[^1]
 
 The owner with the most parcels is unsurprisingly the **city of Lausanne**. With
 1265 parcels it owns 12% of all parcels. This is ten times more than the next
-two owners which are both pension funds; of the city and of the canton Vaud.
+two owners which are the pension funds of the city and of the canton Vaud.
 Because most owners only have a small amount of parcels we will group them into
 7 types:
 
